@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变皮肤</title>
+    <style>
+        body{
+            width:100%;
+            height:100%;
+        }
+        div{
+            width:20px;
+            height:20px;
+            border-radius:100%;
+            margin:10px;
+            cursor: pointer;
+            border:2px solid #cacaca;
+            text-align: center;
+        }
+        .box1{
+            background:red;
+        }
+        .box2{
+            background:orangered;
+        }
+        .box3{
+            background:yellow;
+        }
+        .box4{
+            background:green;
+        }
+        .box5{
+            background:blue;
+        }
+        .box6{
+            background:cyan;
+        }
+        .box7{
+            background:purple;
+        }
+        .bg{
+            background: #ccc;
+            width:10px;
+            height:10px;
+            border-radius:100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"><span></span></div>
+<div class="box2"><span></span></div>
+<div class="box3"><span></span></div>
+<div class="box4"><span></span></div>
+<div class="box5"><span></span></div>
+<div class="box6"><span></span></div>
+<div class="box7"><span></span></div>
+<script>
+    var box=document.getElementsByTagName('div');
+    var body=document.getElementsByTagName('body')[0];
+    for(var i=0;i<box.length;i++){
+        box[i].index=i;
+        box[i].onclick=function(){
+            for(var j=0;j<box.length;j++){
+                box[j].firstChild.className='';
+            }
+            this.firstChild.className='bg';
+            var bac=window.getComputedStyle(this,null);
+            body.style.background=bac.backgroundColor;
+        }
+    }
+</script>
+</body>
+</html>
