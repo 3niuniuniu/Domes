@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击div，显示其innerHTML</title>
+    <style>
+        div{
+            width:600px;
+            height:auto;
+            border:1px dashed #000;
+            margin:10px auto;
+            padding:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h4>let，const与var的区别？</h4>
+        1、变量不可重复<br>
+        2、变量不能提升<br>
+        3、块级作用域
+    </div>
+    <div class="box3">
+        <h4>http与https的区别?</h4>
+        1、协议不同：http是超文本传输协议、https是安全超文本传输协议<br>
+        2、端口不同：http是80、https是443
+    </div>
+    <div class="box4">
+        <h4>什么是闭包？它的优缺点？</h4>
+        答：能够读取其他函数内部变量的函数，将函数内部和函数外部连接起来的桥梁<br>
+        优点：能够读取其他函数内部的变量，函数中的变量始终保存在内存中，不被全局污染<br>
+        缺点：内存消耗大，不能滥用，会造成网页性能问题
+    </div>
+    <div class="box2">
+        git:开源的分布式版本控制系统<br>
+        webpack：模块打包器<br>
+        npm：是同NodeJs一起安装的包管理系统<br>
+        gulp：自动化构建工具
+    </div>
+    <script>
+        var box=document.getElementsByTagName('div');
+        for(var i=0;i<box.length;i++){
+            box[i].index=i;
+            box[i].onclick=function(){
+                var cont=this.innerHTML;
+                prompt(cont)
+            }
+        }
+    </script>
+</body>
+</html>
