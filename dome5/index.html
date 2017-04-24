@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求和</title>
+    <style>
+        *{
+            margin:80px auto;
+            text-align: center;
+        }
+        span{
+            color:red;
+            font-weight:bolder;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="text" placeholder="数字与数字之间需'+'号隔开">
+<button id="btn">=</button>
+<span id="span"></span>
+<script>
+    var text=document.getElementById('text');
+    var btn=document.getElementById('btn');
+    var span=document.getElementById('span');
+    btn.onclick=function(){
+        var arr=text.value.split('+');
+        var sum=0;
+        for(var i=0;i<arr.length;i++){
+            sum+=arr[i]*1;
+        }
+        span.innerHTML=sum;
+    }
+</script>
+</body>
+</html>
