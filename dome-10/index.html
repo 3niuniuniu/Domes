@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,div,ul,li,h2{margin:0;padding:0;}
+        body{font:12px/1.5 Tahoma;}
+        ul{list-style-type:none;}
+        #outer{width:200px;border:1px solid #aaa;margin:10px auto;}
+        #outer h2{cursor:pointer;color:#57646E;font-size:14px;font-weight:400;border:1px solid;height:30px;line-height:30px;padding-left:10px;border-color:#fff #e9edf2;position: relative}
+        #outer ul{border-top:1px solid #DEE3E6;}
+        #outer li{height:25px;line-height:25px;vertical-align:top;}
+        #outer a {  display: block;  color: #6b7980;  background: #e9edf2;  text-decoration: none;  padding: 0 10px;  }
+        #outer a:hover{background:#fff;}
+        .span1 {
+            content: "";
+            border: 6px solid transparent;
+            border-top-color: #999;
+            position: absolute;
+            right: 10px;
+            top:12px;
+        }
+        .span2{
+            content: "";
+            border: 6px solid transparent;
+            border-bottom-color:#999;
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+<h2>播放列表...<span class="span1"></span><span class="span2"></span></h2>
+<ul>
+    <li><a href="#">玩家之徒 - 蔡依林</a></li>
+    <li><a href="#">原谅我就是这样的女生 - 戴佩妮</a></li>
+    <li><a href="#">猜不透 - 丁当</a></li>
+    <li><a href="#">自导自演 - 周杰伦</a></li>
+    <li><a href="#">浪漫窝 - 弦子</a></li>
+    <li><a href="#">流年 - 王菲</a></li>
+</ul>
+</div>
+<script>
+    var h2=document.getElementsByTagName('h2')[0];
+    var ul=document.getElementsByTagName('ul')[0];
+    var span=document.getElementsByTagName('span');
+    h2.onclick=function(){
+        ul.style.display=ul.style.display=='none'?"block":"none";
+        if(ul.style.display=='none'){
+            span[1].style.display='block';
+            span[0].style.display='none';
+        }else{
+            span[1].style.display='none';
+            span[0].style.display='block';
+        }
+    }
+</script>
+</body>
+</html>
