@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入两个数字，比较大小</title>
+    <style>
+        body{font:12px/1.5 arial;text-align:center;}
+        .f-text{width:50px;border:1px solid #ccc;background:#f0f0f0;font-family:inherit;padding:3px;}
+        .f-btn{margin:0 10px;}
+        strong{padding:0 10px;}
+        span{font-weight:700;color:red;}
+    </style>
+</head>
+<body>
+<input type="text" class="f-text" /><strong>vs</strong><input type="text" class="f-text" /><input type="button" value="最大的数是 &raquo;" class="f-btn" /><span>？</span>
+<script>
+    var input=document.getElementsByTagName('input');
+    var span=document.getElementsByTagName('span')[0];
+    for(var i=0;i<input.length;i++){
+        input[i].onkeyup=function(){
+            this.value=this.value.replace(/[^\d]/,'');
+        };
+    }
+    input[2].onclick=function(){
+        var val1=input[0].value*1;
+        var val2=input[1].value*1;
+        /*if(val1>val2) return span.innerHTML=val1;
+        span.innerHTML=val2;*/
+        span.innerHTML=Math.max(val1,val2);
+    }
+</script>
+</body>
+</html>
